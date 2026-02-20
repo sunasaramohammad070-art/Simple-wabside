@@ -398,3 +398,79 @@ allowfullscreen>
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Motivation Hub</title>
+    <style>
+        body{
+            margin:0;
+            font-family:Arial;
+            background:linear-gradient(to right,#000000,#1c1c1c);
+            color:white;
+            text-align:center;
+        }
+
+        h1{
+            padding:20px;
+            font-size:35px;
+        }
+
+        .video-container{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:20px;
+            padding:20px;
+        }
+
+        iframe{
+            width:350px;
+            height:215px;
+            border-radius:15px;
+            box-shadow:0 0 20px rgba(255,255,255,0.2);
+        }
+
+        button{
+            padding:10px 20px;
+            font-size:18px;
+            background:red;
+            color:white;
+            border:none;
+            border-radius:10px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:darkred;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🔥 Daily Motivation Videos 🔥</h1>
+
+<button onclick="loadVideos()">Load New Motivation</button>
+
+<div class="video-container" id="videos"></div>
+
+<script>
+function loadVideos() {
+    const container = document.getElementById("videos");
+    container.innerHTML = "";
+
+    let search = "motivation success hindi";
+
+    for(let i=0;i<6;i++){
+        let iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube.com/embed?listType=search&list=" + search + "&index=" + (i+1);
+        iframe.allowFullscreen = true;
+        container.appendChild(iframe);
+    }
+}
+
+loadVideos();
+</script>
+
+</body>
+</html>
