@@ -72,3 +72,150 @@ function changeText(){
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Ultimate Website</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#111;
+  color:white;
+}
+
+nav{
+  background:#000;
+  padding:15px;
+  text-align:center;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:10px;
+  font-weight:bold;
+}
+
+nav a:hover{
+  color:#00ffcc;
+}
+
+section{
+  padding:60px 20px;
+  text-align:center;
+}
+
+h1{
+  color:#00ffcc;
+}
+
+.card{
+  background:#222;
+  padding:20px;
+  margin:20px auto;
+  width:80%;
+  border-radius:10px;
+  box-shadow:0 0 10px #00ffcc;
+}
+
+button{
+  padding:10px 20px;
+  border:none;
+  background:#00ffcc;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:5px;
+}
+
+button:hover{
+  background:white;
+}
+footer{
+  background:#000;
+  padding:20px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#personal">Personal</a>
+  <a href="#gaming">Gaming</a>
+  <a href="#business">Business</a>
+  <a href="#school">School</a>
+  <a href="#youtube">YouTube</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+  <h1>Welcome To My Website 🚀</h1>
+  <p>Ye ek multi-purpose website hai.</p>
+</section>
+
+<section id="personal">
+  <h1>Personal Section</h1>
+  <div class="card">
+    <p>Hello! Mera naam ______ hai.</p>
+    <p>Mai web development seekh raha hu.</p>
+  </div>
+</section>
+
+<section id="gaming">
+  <h1>Gaming Section 🎮</h1>
+  <div class="card">
+    <p>Mere Favorite Games:</p>
+    <ul>
+      <li>Free Fire</li>
+      <li>BGMI</li>
+      <li>GTA V</li>
+    </ul>
+  </div>
+</section>
+
+<section id="business">
+  <h1>Business Section 💼</h1>
+  <div class="card">
+    <p>Hamari Services:</p>
+    <p>Website Design | Graphic Design | Marketing</p>
+    <button>Contact Now</button>
+  </div>
+</section>
+
+<section id="school">
+  <h1>School Project Section 📚</h1>
+  <div class="card">
+    <p>Yaha ap apna school project likh sakte ho.</p>
+  </div>
+</section>
+
+<section id="youtube">
+  <h1>YouTube Channel 🎥</h1>
+  <div class="card">
+    <p>Subscribe to my channel!</p>
+    <button onclick="alert('Channel Link Yaha Dalein')">Subscribe</button>
+  </div>
+</section>
+
+<section id="contact">
+  <h1>Contact Me 📩</h1>
+  <div class="card">
+    <input type="text" placeholder="Your Name"><br><br>
+    <input type="email" placeholder="Your Email"><br><br>
+    <textarea placeholder="Your Message"></textarea><br><br>
+    <button>Send</button>
+  </div>
+</section>
+
+<footer>
+  © 2026 My Ultimate Website | All Rights Reserved
+</footer>
+
+</body>
+</html>
