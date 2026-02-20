@@ -1,219 +1,74 @@
-
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-import time
-
-def automate_web():
-    # Chrome browser ko background mein chalane ke liye options set karte hain
-    options = webdriver.ChromeOptions()
-    options.add_argument("--start-maximized") # Browser ko full screen karega
-    
-    try:
-        # Webdriver setup karna (ChromeDriver auto-install hoga)
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-        
-        # Website kholna (Yahan Google khol raha hoon, tum apni website ka URL daal sakte ho)
-        print("Website open kar raha hoon...")
-        driver.get("https://www.google.com")
-        
-        time.sleep(2) # Website load hone ka wait karega
-        
-        # Search box dhundna (Inspect Element se naam liya gaya hai)
-        search_box = driver.find_element(By.NAME, "q")
-        
-        # Search box mein text type karna
-        search_box.send_keys("Python Automation")
-        
-        # Enter press karna
-        search_box.submit()
-        
-        print("Search ho gaya!")
-        time.sleep(5) # result dekhne ke liye wait
-        
-    except Exception as e:
-        print(f"Error aaya: {e}")
-    
-    finally:
-        # Browser band karna
-        driver.quit()
-
-# Function ko run karna
-automate_web()
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Powerful Website</title>
+  <title>My Motivational Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family:sans-serif;
+      text-align:center;
+      background:black;
+      color:white;
+    }
 
-<style>
-body{
-  margin:0;
-  font-family:sans-serif;
-  transition:0.5s;
-}
+    header{
+      padding:40px;
+      font-size:32px;
+      font-weight:bold;
+    }
 
-header{
-  background:black;
-  color:white;
-  padding:20px;
-  text-align:center;
-}
+    .hero{
+      padding:50px 20px;
+    }
 
-section{
-  padding:40px;
-  text-align:center;
-}
+    button{
+      padding:12px 25px;
+      margin:10px;
+      border:none;
+      background:gold;
+      font-weight:bold;
+      cursor:pointer;
+    }
 
-button{
-  padding:10px 20px;
-  margin:10px;
-  border:none;
-  cursor:pointer;
-  font-weight:bold;
-}
+    button:hover{
+      background:orange;
+    }
 
-.dark{
-  background:black;
-  color:white;
-}
+    .video-section{
+      margin-top:40px;
+    }
 
-.light{
-  background:white;
-  color:black;
-}
+    iframe{
+      width:90%;
+      max-width:400px;
+      height:220px;
+      border-radius:10px;
+    }
 
-.hidden{
-  display:none;
-}
-</style>
+  </style>
 </head>
 
-<body class="light">
+<body>
 
-<header>
-  <h1 id="title">Never Give Up 💪</h1>
-</header>
+<header>Never Give Up 💪</header>
 
-<section id="content">
-  <p id="text">Yeh meri powerful website hai</p>
-</section>
+<div class="hero">
+  <h2>I Will Not Never Give Up</h2>
+  <p>Success is coming 🚀</p>
+  <button onclick="changeText()">Click Motivation</button>
+</div>
 
-<section>
-  <button onclick="changeText()">Change Text</button>
-  <button onclick="toggleTheme()">Change Theme</button>
-  <button onclick="hideContent()">Hide/Show Content</button>
-</section>
+<div class="video-section">
+  <h3>Motivational Video</h3>
+  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+</div>
 
 <script>
-
 function changeText(){
-  document.getElementById("text").innerHTML = "Success is coming 🚀";
+  alert("Keep Working Hard 🔥");
 }
-
-function toggleTheme(){
-  document.body.classList.toggle("dark");
-  document.body.classList.toggle("light");
-}
-
-function hideContent(){
-  document.getElementById("content").classList.toggle("hidden");
-}
-
 </script>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorful Website</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #f0932b);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .container {
-            text-align: center;
-            padding: 50px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-        }
-        
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .photo {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border: 8px solid rgba(255,255,255,0.3);
-            margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .photo:hover {
-            transform: scale(1.05);
-        }
-        
-        p {
-            font-size: 1.5em;
-            margin: 20px 0;
-        }
-        
-        .btn {
-            background: #ff6b6b;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-        }
-        
-        .btn:hover {
-            background: #ff5252;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>🌈 Meri Colorful Website! 🌈</h1>
-        <img src="https://via.placeholder.com/300x300/ff6b6b/ffffff?text=Tumhari+Photo" alt="Tumhari Photo" class="photo">
-        <p>Bhai, website bilkul colorful ho gayi! Photo bhi aa gayi! 🎉</p>
-        <a href="#" class="btn">Click Karo Dekho! ✨</a>
-    </div>
 </body>
 </html>
