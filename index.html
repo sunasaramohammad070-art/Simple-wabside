@@ -1,226 +1,272 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
-  <title>My Motivational Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body{
-      margin:0;
-      font-family:sans-serif;
-      text-align:center;
-      background:black;
-      color:white;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Website</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .hero-content h1 {
+            font-size: 3.5rem; margin-bottom: 1rem; animation: slideInUp 1s ease-out;
+        }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; animation: slideInUp 1s ease-out 0.2s both; }
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .btn { 
+            display: inline-block; padding: 12px 30px; background: #ff6b6b; color: white; text-decoration: none; 
+            border-radius: 50px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
 
-    header{
-      padding:40px;
-      font-size:32px;
-      font-weight:bold;
-    }
+        /* Sections */
+        section { padding: 80px 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .features { background: #f8f9fa; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .feature { text-align: center; padding: 30px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .feature:hover { transform: translateY(-10px); }
+        .feature i { font-size: 3rem; color: #667eea; margin-bottom: 20px; }
 
-    .hero{
-      padding:50px 20px;
-    }
-
-    button{
-      padding:12px 25px;
-      margin:10px;
-      border:none;
-      background:gold;
-      font-weight:bold;
-      cursor:pointer;
-    }
-
-    button:hover{
-      background:orange;
-    }
-
-    .video-section{
-      margin-top:40px;
-    }
-
-    iframe{
-      width:90%;
-      max-width:400px;
-      height:220px;
-      border-radius:10px;
-    }
-
-  </style>
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-
 <body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Swagat Hai Aapka!</h1>
+            <p>Ye website bilkul beautiful hai, dekho aur khush ho jao. Modern design ke saath fully responsive.[web:2]</p>
+            <a href="#features" class="btn">Aur Dekho</a>
+        </div>
+    </header>
 
-<header>Never Give Up 💪</header>
+    <section id="features" class="features">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #333;">Kyun Beautiful?</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <div>⭐</div>
+                    <h3>Smooth Animations</h3>
+                    <p>Har cheez slide karke aati hai, users ko maza aayega.[web:3]</p>
+                </div>
+                <div class="feature">
+                    <div>📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Sab devices pe perfect dikhegi.[web:2]</p>
+                </div>
+                <div class="feature">
+                    <div>🎨</div>
+                    <h3>Gradient Colors</h3>
+                    <p>Vibrant aur eye-catching design.[web:1]</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="hero">
-  <h2>I Will Not Never Give Up</h2>
-  <p>Success is coming 🚀</p>
-  <button onclick="changeText()">Click Motivation</button>
-</div>
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+  </html>
+  <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Style for Beauty -->
+    <style>
+        .navbar-brand { font-weight: bold; font-size: 1.5rem; }
+        .navbar { box-shadow: 0 2px 10px rgba(0,0,0,0.1); background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important; }
+        .nav-link { color: white !important; transition: color 0.3s; }
+        .nav-link:hover { color: #ff6b6b !important; }
+        .navbar-toggler { border: none; }
+    </style>
+</head>
+<body>
+    <!-- Responsive Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Teri Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="video-section">
-  <h3>Motivational Video</h3>
-  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-</div>
-
-<script>
-function changeText(){
-  alert("Keep Working Hard 🔥");
-}
-</script>
-
+    <!-- Bootstrap JS CDN (end of body mein) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Tera content yahan daal -->
+    <div style="height: 200vh; padding: 50px;">
+        <h1>Navbar test karo, mobile pe hamburger click karo![web:11]</h1>
+    </div>
 </body>
 </html>
+<ul class="navbar-nav ms-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="#home">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#about">About</a>
+    </li>
+    <!-- Dropdown Menu -->
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#web">Web Design</a></li>
+            <li><a class="dropdown-item" href="#app">App Dev</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#contact">Contact Us</a></li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+    </li>
+</ul>
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+}
+.dropdown-item:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white !important;
+}
+.dropdown-toggle::after {
+    margin-left: 0.5rem;
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-cogs me-1"></i>Services
+    </a>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#web"><i class="fas fa-paint-brush me-2"></i>Web Design</a></li>
+        <li><a class="dropdown-item" href="#app"><i class="fas fa-mobile-alt me-2"></i>App Dev</a></li>
+        <li><a class="dropdown-item" href="#seo"><i class="fas fa-search me-2"></i>SEO</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#contact"><i class="fas fa-phone me-2"></i>Contact Us</a></li>
+    </ul>
+</li>
+<!-- Head mein ye CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Icon use -->
+<i class="fas fa-home"></i> Home
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Ultimate Website</title>
-
-<style>
-body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#111;
-  color:white;
-}
-
-nav{
-  background:#000;
-  padding:15px;
-  text-align:center;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  margin:10px;
-  font-weight:bold;
-}
-
-nav a:hover{
-  color:#00ffcc;
-}
-
-section{
-  padding:60px 20px;
-  text-align:center;
-}
-
-h1{
-  color:#00ffcc;
-}
-
-.card{
-  background:#222;
-  padding:20px;
-  margin:20px auto;
-  width:80%;
-  border-radius:10px;
-  box-shadow:0 0 10px #00ffcc;
-}
-
-button{
-  padding:10px 20px;
-  border:none;
-  background:#00ffcc;
-  font-weight:bold;
-  cursor:pointer;
-  border-radius:5px;
-}
-
-button:hover{
-  background:white;
-}
-footer{
-  background:#000;
-  padding:20px;
-  text-align:center;
-}
-</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Icon Generator</title>
+    <style>
+        .icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 15px; padding: 20px; }
+        .icon-btn { border: none; background: #f8f9fa; padding: 15px; border-radius: 10px; cursor: pointer; transition: all 0.3s; }
+        .icon-btn:hover { background: #667eea; color: white; transform: scale(1.1); }
+        .code-box { background: #333; color: #00ff00; padding: 15px; border-radius: 8px; margin: 20px 0; font-family: monospace; }
+    </style>
 </head>
-
 <body>
+    <div class="container" style="max-width: 1200px; margin: 50px auto;">
+        <h1><i class="fas fa-magic"></i> Icon Generator - Click Karo!</h1>
+        
+        <div class="icon-grid">
+            <button class="icon-btn" onclick="copyIcon('home')"><i class="fas fa-home fa-2x"></i><br>Home</button>
+            <button class="icon-btn" onclick="copyIcon('user')"><i class="fas fa-user fa-2x"></i><br>User</button>
+            <button class="icon-btn" onclick="copyIcon('phone')"><i class="fas fa-phone fa-2x"></i><br>Phone</button>
+            <button class="icon-btn" onclick="copyIcon('envelope')"><i class="fas fa-envelope fa-2x"></i><br>Email</button>
+            <button class="icon-btn" onclick="copyIcon('cogs')"><i class="fas fa-cogs fa-2x"></i><br>Settings</button>
+            <button class="icon-btn" onclick="copyIcon('paint-brush')"><i class="fas fa-paint-brush fa-2x"></i><br>Design</button>
+            <button class="icon-btn" onclick="copyIcon('mobile-alt')"><i class="fas fa-mobile-alt fa-2x"></i><br>Mobile</button>
+            <button class="icon-btn" onclick="copyIcon('search')"><i class="fas fa-search fa-2x"></i><br>Search</button>
+            <button class="icon-btn" onclick="copyIcon('star')"><i class="fas fa-star fa-2x"></i><br>Star</button>
+            <button class="icon-btn" onclick="copyIcon('heart')"><i class="fas fa-heart fa-2x"></i><br>Heart</button>
+        </div>
+        
+        <div id="codeOutput" class="code-box" style="display:none;">
+            Code copied! Paste karo navbar mein:
+            <br><span id="copiedCode"></span>
+        </div>
+    </div>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#personal">Personal</a>
-  <a href="#gaming">Gaming</a>
-  <a href="#business">Business</a>
-  <a href="#school">School</a>
-  <a href="#youtube">YouTube</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section id="home">
-  <h1>Welcome To My Website 🚀</h1>
-  <p>Ye ek multi-purpose website hai.</p>
-</section>
-
-<section id="personal">
-  <h1>Personal Section</h1>
-  <div class="card">
-    <p>Hello! Mera naam ______ hai.</p>
-    <p>Mai web development seekh raha hu.</p>
-  </div>
-</section>
-
-<section id="gaming">
-  <h1>Gaming Section 🎮</h1>
-  <div class="card">
-    <p>Mere Favorite Games:</p>
-    <ul>
-      <li>Free Fire</li>
-      <li>BGMI</li>
-      <li>GTA V</li>
-    </ul>
-  </div>
-</section>
-
-<section id="business">
-  <h9>Business Section 💼</h9>
-  <div class="card">
-    <p>Hamari Services:</p>
-    <p>Website Design | Graphic Design | Marketing</p>
-    <button>Contact Now</button>
-  </div>
-</section>
-
-<section id="school">
-  <h1>School Project Section 📚</h9>
-  <div class="card">
-    <p>Yaha ap apna school project likh sakte ho.</p>
-  </div>
-</section>
-
-<section id="youtube">
-  <h9>YouTube Channel 🎥</h9>
-  <div class="card">
-    <p>Subscribe to my channel!</p>
-    <button onclick="alert('Channel Link Yaha Dalein')">Subscribe</button>
-  </div>
-</section>
-
-<section id="contact">
-  <h9>Contact Me 📩</h9>
-  <div class="card">
-    <input type="text" placeholder="Your Name"><br><br>
-    <input type="email" placeholder="Your Email"><br><br>
-    <textarea placeholder="Your Message"></textarea><br><br>
-    <button>Send</button>
-  </div>
-</section>
-
-<footer>
-  © 2026 My Ultimate Website | All Rights Reserved
-</footer>
-
+    <script>
+        function copyIcon(iconName) {
+            const code = `<i class="fas fa-${iconName} me-2"></i>`;
+            navigator.clipboard.writeText(code).then(() => {
+                document.getElementById('copiedCode').textContent = code;
+                document.getElementById('codeOutput').style.display = 'block';
+                setTimeout(() => document.getElementById('codeOutput').style.display = 'none', 3000);
+            });
+        }
+    </script>
 </body>
-</html>
-style.css
-gaming.html
-school.htmlstyle.css
-gaming.html
-school.html
+      </html>
+      <link rel="stylesheet" href="https://maxsticons.github.io/line-awesome/css/line-awesome.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+      <script src="https://unpkg.com/feather-icons"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/outline/index.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+      <!-- Font Awesome hatao, ye daalo -->
+<link rel="stylesheet" href="https://maxsticons.github.io/line-awesome/css/line-awesome.min.css">
+
+<!-- Dropdown mein replace karo -->
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+        <i class="la la-cogs me-1"></i>Services  <!-- fa-cogs → la-cogs -->
+    </a>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#"><i class="la la-paint-brush me-2"></i>Web Design</a></li>
+        <li><a class="dropdown-item" href="#"><i class="la la-mobile me-2"></i>App Dev</a></li>
+    </ul>
+              </li>
+              
